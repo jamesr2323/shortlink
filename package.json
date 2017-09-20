@@ -1,0 +1,25 @@
+{
+  "name": "link-shortener",
+  "version": "1.0.0",
+  "description": "A simple link shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "randomstring": "^1.1.5",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "engines": { 
+    "node" : ">=8.40" 
+  }
+}
