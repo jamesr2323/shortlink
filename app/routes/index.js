@@ -16,10 +16,10 @@ module.exports = function(app, db) {
   });
 
   app.post('/links', async (req, res) => {
-    token = req.body.token
+    auth_token = req.body.auth_token
     long_url = req.body.long_url
 
-    if (token != 'ABCD') {
+    if (auth_token != process.env.AUTH_TOKEN) {
       res.send(403)
       return  
     }
@@ -35,6 +35,6 @@ module.exports = function(app, db) {
     }
     
     await client.set('slug:'+slug, long_url)
-    res.send({slug: slug})    
+    res.send({short_url: process.env.APP_URL + slug})    
   });
 };
