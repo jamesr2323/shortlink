@@ -12,7 +12,11 @@ module.exports = function(app, db) {
   app.get('/:slug', async function(req, res){
     var slug = req.params.slug;
     var long_url = await client.getAsync('slug:'+slug);
-    res.redirect(long_url);
+    if (long_url){
+      res.redirect(long_url);
+    } else {
+      res.sendStatus(404) 
+    }
   });
 
   app.post('/links', async (req, res) => {
