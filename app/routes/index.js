@@ -20,7 +20,7 @@ module.exports = function(app, db) {
     long_url = req.body.long_url
 
     if (auth_token != process.env.AUTH_TOKEN) {
-      res.send(403)
+      res.sendStatus(403)
       return  
     }
 
